@@ -1,0 +1,56 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+<div class="dashboard">
+
+{% include 'sidebar.html' %}
+
+<div class="main">
+
+<h1>Company Dashboard</h1>
+
+<div class="stats">
+
+<div class="stat-card">
+<h3>8</h3>
+<p>Active Campaigns</p>
+</div>
+
+<div class="stat-card">
+<h3>$12000</h3>
+<p>Total Budget</p>
+</div>
+
+<div class="stat-card">
+<h3>15</h3>
+<p>KOLs Hired</p>
+</div>
+
+<div class="stat-card">
+<h3>92%</h3>
+<p>Campaign Success</p>
+</div>
+
+</div>
+
+<h2>Recent Campaigns</h2>
+
+<div class="campaigns">
+
+<div class="campaign-card">
+<h3>AI Marketing Campaign</h3>
+<p>Budget: $2000</p>
+<button>Manage</button>
+</div>
+
+<div class="campaign-card">
+<h3>Healthcare Awareness</h3>
+<p>Budget: $1500</p>
+<button>Manage</button>
+</div>
+
+</div>
+
+</div>
+
+</div>

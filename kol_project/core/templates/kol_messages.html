@@ -1,0 +1,30 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+<div class="dashboard">
+
+{% include 'sidebar.html' %}
+
+<div class="main">
+
+<h1>Messages</h1>
+
+<div class="chat-box">
+
+<div class="message">
+<b>Company:</b> Are you available for our campaign?
+</div>
+
+<div class="message">
+<b>You:</b> Yes, please share the campaign details.
+</div>
+
+</div>
+
+<input type="text" placeholder="Type a message..." style="width:80%;padding:10px;">
+
+<button onclick="showNotification('Message Sent')">Send</button>
+
+</div>
+
+</div>

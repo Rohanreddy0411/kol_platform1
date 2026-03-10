@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>KOL Platform</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+
+<body>
+
+<div class="navbar">
+
+<div class="logo">KOL Platform</div>
+
+<div class="nav-links">
+<a href="/">Home</a>
+<a href="/explore-kols">Explore KOLs</a>
+<a href="/explore-campaigns">Campaigns</a>
+<a href="/pricing">Pricing</a>
+<a href="/login">Login</a>
+<a href="/register">Register</a>
+</div>
+
+</div>
+
+<section class="hero">
+
+<h1>KOL PLATFORM</h1>
+
+<p>
+KOL platforms are specialized software solutions designed to identify,
+engage, and manage Key Opinion Leaders (experts/influencers) to boost
+brand credibility and drive sales.
+</p>
+
+<a href="/explore-kols" class="btn">Explore Influencers</a>
+
+</section>
+
+<section class="cards">
+
+<div class="card">
+<h3>Influencer Discovery</h3>
+<p>Find trusted Key Opinion Leaders across industries.</p>
+</div>
+
+<div class="card">
+<h3>Campaign Management</h3>
+<p>Create and manage brand campaigns with influencers easily.</p>
+</div>
+
+<div class="card">
+<h3>Secure Collaboration</h3>
+<p>Brands and influencers collaborate through structured deals.</p>
+</div>
+
+<div class="card">
+<h3>Analytics Dashboard</h3>
+<p>Track engagement, revenue, and campaign performance.</p>
+</div>
+
+</section>
+
+<footer class="footer">
+
+<p>© 2026 KOL Platform. All rights reserved.</p>
+
+<a href="/about">About</a>
+<a href="/pricing">Pricing</a>
+<a href="/explore-kols">Explore KOLs</a>
+<a href="/explore-campaigns">Campaigns</a>
+
+</footer>
+
+<div id="toast" class="toast">Notification</div>
+
+<script>
+
+function showNotification(message){
+
+const toast=document.getElementById("toast");
+
+toast.innerText=message;
+toast.style.display="block";
+
+setTimeout(function(){
+toast.style.display="none";
+},3000);
+
+}
+
+</script>
+
+</body>
+</html>
