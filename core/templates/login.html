@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>KOL Platform Login</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+
+<body>
+
+<!-- BACK BUTTON -->
+
+<a href="/" class="back-btn">← Back</a>
+
+<div class="login-wrapper">
+
+<div class="login-card">
+
+<h1>Log in</h1>
+
+<p class="register-text">
+Need a KOL Platform account?
+<a href="/register">Create an account</a>
+</p>
+
+<form method="POST">
+{% csrf_token %}
+
+<label>Username or Email</label>
+<input type="text" name="email" required>
+
+<label>Password</label>
+<input type="password" name="password" required>
+
+<div class="remember-box">
+<input type="checkbox"> Keep me logged in
+</div>
+
+<button type="submit" onclick="showNotification('Login Successful')" class="login-button">
+Log in
+</button>
+
+</form>
+
+<div class="extra-links">
+
+<a href="#" onclick="forgotUsername()">Forgot username?</a>
+
+<a href="#" onclick="forgotPassword()">Forgot password?</a>
+
+<a href="#" onclick="cantLogin()">Can't log in?</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- NOTIFICATION POPUP -->
+
+<div id="toast" class="toast">Notification</div>
+
+
+<script>
+
+function showNotification(message){
+
+const toast=document.getElementById("toast");
+
+toast.innerText=message;
+toast.style.display="block";
+
+setTimeout(function(){
+toast.style.display="none";
+},3000);
+
+}
+
+
+function forgotUsername(){
+showNotification("Recovery email will be sent to your registered email.");
+}
+
+function forgotPassword(){
+showNotification("Password reset link will be sent to your email.");
+}
+
+function cantLogin(){
+showNotification("Please contact support for login issues.");
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+<div class="dashboard">
+
+{% include 'sidebar.html' %}
+
+<div class="main">
+
+<h1>KOL Wallet</h1>
+
+<div class="stats">
+
+<div class="stat-card">
+<h3>$2500</h3>
+<p>Available Balance</p>
+</div>
+
+<div class="stat-card">
+<h3>$800</h3>
+<p>Pending Balance</p>
+</div>
+
+<div class="stat-card">
+<h3>$5000</h3>
+<p>Total Earned</p>
+</div>
+
+</div>
+
+<h2>Transaction History</h2>
+
+<table border="1" style="width:100%;margin-top:20px;">
+
+<tr>
+<th>Date</th>
+<th>Campaign</th>
+<th>Amount</th>
+<th>Status</th>
+</tr>
+
+<tr>
+<td>Jan 10</td>
+<td>Fitness Campaign</td>
+<td>$1200</td>
+<td>Completed</td>
+</tr>
+
+<tr>
+<td>Feb 3</td>
+<td>Travel Promotion</td>
+<td>$800</td>
+<td>Pending</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>

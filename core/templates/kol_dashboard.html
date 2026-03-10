@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>KOL Dashboard</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+{% include 'sidebar.html' %}
+
+<div class="main">
+
+<h1>KOL Dashboard</h1>
+
+<div class="stats">
+
+<div class="stat-card">
+<h3>12</h3>
+<p>Total Collaborations</p>
+</div>
+
+<div class="stat-card">
+<h3>5</h3>
+<p>Active Campaigns</p>
+</div>
+
+<div class="stat-card">
+<h3>$2500</h3>
+<p>Total Revenue</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

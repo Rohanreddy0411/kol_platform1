@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Register</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+
+<body>
+
+<a href="/" class="back-btn">← Back</a>
+
+<div class="login-wrapper">
+
+<div class="login-card">
+
+<h1>Create Account</h1>
+
+<form method="POST">
+{% csrf_token %}
+
+<label>Email</label>
+<input type="email" required>
+
+<label>Password</label>
+<input type="password" required>
+
+<button onclick="showNotification('Account Created')" class="login-button">
+Register
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+<div id="toast" class="toast">Notification</div>
+
+<script>
+
+function showNotification(message){
+
+const toast=document.getElementById("toast");
+
+toast.innerText=message;
+toast.style.display="block";
+
+setTimeout(function(){
+toast.style.display="none";
+},3000);
+
+}
+
+</script>
+
+</body>
+</html>
