@@ -7,8 +7,8 @@ import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # SECURITY
+
 SECRET_KEY = 'django-insecure-7yx#+z(2jl&5w!vpr$%52&!b0qu=$x3tizo&3vlrr)i-@48p76'
 
 DEBUG = True
@@ -34,6 +34,10 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+
+    # WhiteNoise for static files (important for Render)
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -67,7 +71,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'kol_project.wsgi.application'
 
 
-# DATABASE (Changed to SQLite for deployment)
+# DATABASE (SQLite for deployment)
 
 DATABASES = {
     'default': {
@@ -114,8 +118,11 @@ STATICFILES_DIRS = [
     BASE_DIR / "static"
 ]
 
-# REQUIRED FOR RENDER DEPLOYMENT
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# Static files collected here for production
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+# WhiteNoise static file storage
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 # DEFAULT PRIMARY KEY
